@@ -1,0 +1,4 @@
+vhdl work "VGA.vhd"
+vhdl work "DATA.vhd"
+vhdl work "CONTROL.vhd"
+vhdl work "TOP_MODULE.vhd"

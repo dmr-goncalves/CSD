@@ -1,0 +1,2 @@
+vhdtdtfi -lib work DATA.vhd -prj SecTrab -o DATA.spl -module DATA -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 DATA.spl /home/user/CSD/SecTrabComZoom/DATA.sym 

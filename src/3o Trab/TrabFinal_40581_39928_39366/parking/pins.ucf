@@ -1,0 +1,44 @@
+NET "CLK"  LOC = "T9"  ;
+NET "RED"  LOC = "R12"  ;
+NET "GRN"  LOC = "T12"  ;
+NET "BLU"  LOC = "R11"  ;
+NET "HS"  LOC = "R9"  ;
+NET "VS"  LOC = "T10"  ;
+
+NET "RESET" LOC = "L14" ;
+NET "ENABLE" LOC = "F12";
+
+#NET "arriveIn" LOC = "L13";
+#NET "gotTicket1" LOC = "M13";
+#NET "arriveOutFloor1" LOC = "K13";
+#NET "payFloor1" LOC = "K14";
+
+NET "button1" LOC = "L13";
+NET "button2" LOC = "M13";
+NET "switchFloor" LOC = "J14";
+NET "switchIO" LOC = "H13";
+NET "switchRamp" LOC = "J13";
+NET "sensorA" LOC = "K13";
+NET "sensorB" LOC = "K14";
+
+NET "LEDS<0>" LOC = "K12";
+NET "LEDS<1>" LOC = "P14";
+NET "LEDS<2>" LOC = "L12";
+NET "LEDS<3>" LOC = "N14";
+NET "LEDS<4>" LOC = "P13";
+NET "LEDS<5>" LOC = "N12";
+NET "LEDS<6>" LOC = "P12";
+NET "LEDS<7>" LOC = "P11";
+
+NET "algarismo<0>" LOC = "N16" ;
+NET "algarismo<1>" LOC = "F13" ;
+NET "algarismo<2>" LOC = "R16" ;
+NET "algarismo<3>" LOC = "P15" ;
+NET "algarismo<4>" LOC = "N15" ;
+NET "algarismo<5>" LOC = "G13" ;
+NET "algarismo<6>" LOC = "E14" ;
+NET "algarismo<7>" LOC = "P16" ;
+NET "an0" LOC = "D14" ;
+NET "an1" LOC = "G14" ;
+NET "an2" LOC = "F14" ;
+NET "an3" LOC = "E13" ;

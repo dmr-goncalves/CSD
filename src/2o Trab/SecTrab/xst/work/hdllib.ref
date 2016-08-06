@@ -1,0 +1,8 @@
+AR top_module behavioral /home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd sub00/vhpl07 1445722911
+AR data behavioral /home/duarteg/Desktop/SecTrab/DATA.vhd sub00/vhpl03 1445722907
+EN top_module NULL /home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd sub00/vhpl06 1445722910
+EN vga NULL /home/duarteg/Desktop/SecTrab/VGA.vhd sub00/vhpl04 1445722908
+AR vga behavioral /home/duarteg/Desktop/SecTrab/VGA.vhd sub00/vhpl05 1445722909
+EN control NULL /home/duarteg/Desktop/SecTrab/CONTROL.vhd sub00/vhpl00 1445722904
+EN data NULL /home/duarteg/Desktop/SecTrab/DATA.vhd sub00/vhpl02 1445722906
+AR control behavioral /home/duarteg/Desktop/SecTrab/CONTROL.vhd sub00/vhpl01 1445722905

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/duarteg/CSDTrab/parking/TOP.ncd
+OUTFILE=/home/duarteg/CSDTrab/parking/TOP.bit
+FAMILY=Spartan3
+PART=xc3s200-4ft256
+WORKINGDIR=/home/duarteg/CSDTrab/parking
+LICENSE=WebPack
+USER_INFO=210676585_0_0_510

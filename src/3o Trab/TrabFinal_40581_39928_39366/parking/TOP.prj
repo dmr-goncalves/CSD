@@ -1,0 +1,4 @@
+vhdl work "VGA.vhd"
+vhdl work "park.vhd"
+vhdl work "DISPLAY.vhd"
+vhdl work "TOP.vhd"

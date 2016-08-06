@@ -1,0 +1,2 @@
+vhdtdtfi -lib work VGA.vhd -prj SecTrab -o VGA.spl -module VGA -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 VGA.spl /home/user/CSD/SecTrabComZoom/VGA.sym 

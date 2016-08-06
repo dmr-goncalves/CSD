@@ -1,0 +1,6 @@
+vhdtdtfi -lib work CONTROL.vhd -prj SecTrab -o CONTROL.spl -module CONTROL -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 CONTROL.spl /home/user/CSD/SecTrabComZoom/CONTROL.sym 
+vhdtdtfi -lib work CONTROL.vhd -prj SecTrab -o CONTROL.spl -module CONTROL -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 CONTROL.spl /home/user/CSD/SecTrabComZoom/CONTROL.sym 
+vhdtdtfi -lib work CONTROL.vhd -prj SecTrab -o CONTROL.spl -module CONTROL -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3 CONTROL.spl /home/user/CSD/SecTrabComZoom/CONTROL.sym 

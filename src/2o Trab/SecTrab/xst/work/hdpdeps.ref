@@ -1,0 +1,26 @@
+V3 15
+FL /home/duarteg/Desktop/SecTrab/CONTROL.vhd 2015/10/24.18:37:28 P.20131013
+EN work/CONTROL 1445722904 FL /home/duarteg/Desktop/SecTrab/CONTROL.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/CONTROL/Behavioral 1445722905 \
+      FL /home/duarteg/Desktop/SecTrab/CONTROL.vhd EN work/CONTROL 1445722904
+FL /home/duarteg/Desktop/SecTrab/DATA.vhd 2015/10/24.18:29:24 P.20131013
+EN work/DATA 1445722906 FL /home/duarteg/Desktop/SecTrab/DATA.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/DATA/Behavioral 1445722907 \
+      FL /home/duarteg/Desktop/SecTrab/DATA.vhd EN work/DATA 1445722906
+FL /home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd 2015/10/24.19:20:02 P.20131013
+EN work/TOP_MODULE 1445722910 FL /home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/TOP_MODULE/Behavioral 1445722911 \
+      FL /home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd EN work/TOP_MODULE 1445722910 \
+      CP CONTROL CP DATA CP VGA
+FL /home/duarteg/Desktop/SecTrab/VGA.vhd 2015/10/24.22:41:14 P.20131013
+EN work/VGA 1445722908 FL /home/duarteg/Desktop/SecTrab/VGA.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB ieee/NUMERIC_STD 1381692181
+AR work/VGA/Behavioral 1445722909 \
+      FL /home/duarteg/Desktop/SecTrab/VGA.vhd EN work/VGA 1445722908

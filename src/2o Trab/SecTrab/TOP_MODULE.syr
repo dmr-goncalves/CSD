@@ -1,0 +1,815 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Reading design: TOP_MODULE.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TOP_MODULE.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TOP_MODULE"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : TOP_MODULE
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/duarteg/Desktop/SecTrab/CONTROL.vhd" in Library work.
+Architecture behavioral of Entity control is up to date.
+Compiling vhdl file "/home/duarteg/Desktop/SecTrab/DATA.vhd" in Library work.
+Architecture behavioral of Entity data is up to date.
+Compiling vhdl file "/home/duarteg/Desktop/SecTrab/VGA.vhd" in Library work.
+Architecture behavioral of Entity vga is up to date.
+Compiling vhdl file "/home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd" in Library work.
+Architecture behavioral of Entity top_module is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <TOP_MODULE> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <CONTROL> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <DATA> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <VGA> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <TOP_MODULE> in library <work> (Architecture <behavioral>).
+WARNING:Xst:752 - "/home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd" line 99: Unconnected input port 'STOP' of component 'CONTROL' is tied to default value.
+Entity <TOP_MODULE> analyzed. Unit <TOP_MODULE> generated.
+
+Analyzing Entity <CONTROL> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "/home/duarteg/Desktop/SecTrab/CONTROL.vhd" line 102: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <PLUS>, <NEXTDIGIT>, <RESET>
+Entity <CONTROL> analyzed. Unit <CONTROL> generated.
+
+Analyzing Entity <DATA> in library <work> (Architecture <behavioral>).
+Entity <DATA> analyzed. Unit <DATA> generated.
+
+Analyzing Entity <VGA> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <vert_pos> in unit <VGA> has a constant value of 0010000010 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <horz_pos> in unit <VGA> has a constant value of 0010010110 during circuit operation. The register is replaced by logic.
+Entity <VGA> analyzed. Unit <VGA> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <CONTROL>.
+    Related source file is "/home/duarteg/Desktop/SecTrab/CONTROL.vhd".
+WARNING:Xst:647 - Input <STOP> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 15                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | state0                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <NEXT_DIGIT>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <ZERO>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <SUM>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 1-bit register for signal <push>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 D-type flip-flop(s).
+Unit <CONTROL> synthesized.
+
+
+Synthesizing Unit <DATA>.
+    Related source file is "/home/duarteg/Desktop/SecTrab/DATA.vhd".
+    Found finite state machine <FSM_1> for signal <aux>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 8                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit register for signal <reg_a>.
+    Found 4-bit adder for signal <reg_a$addsub0000> created at line 103.
+    Found 4-bit register for signal <reg_b>.
+    Found 4-bit adder for signal <reg_b$addsub0000> created at line 91.
+    Found 4-bit register for signal <reg_c>.
+    Found 4-bit adder for signal <reg_c$addsub0000> created at line 79.
+    Found 4-bit register for signal <reg_d>.
+    Found 4-bit adder for signal <reg_d$addsub0000> created at line 67.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+Unit <DATA> synthesized.
+
+
+Synthesizing Unit <VGA>.
+    Related source file is "/home/duarteg/Desktop/SecTrab/VGA.vhd".
+WARNING:Xst:1780 - Signal <horz_scan_digit> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Register <GRN> equivalent to <BLU> has been removed
+    Register <RED> equivalent to <BLU> has been removed
+    Found 4x60-bit ROM for signal <ZOOM$rom0000>.
+    Found 1-bit register for signal <BLU>.
+    Found 1-bit register for signal <back_color>.
+    Found 10-bit register for signal <big_vert_side>.
+    Found 10-bit register for signal <dist>.
+    Found 10-bit adder for signal <GRN$addsub0000> created at line 251.
+    Found 10-bit adder for signal <GRN$addsub0001> created at line 251.
+    Found 10-bit adder for signal <GRN$addsub0002> created at line 251.
+    Found 10-bit subtractor for signal <GRN$addsub0003> created at line 251.
+    Found 10-bit adder for signal <GRN$addsub0004> created at line 259.
+    Found 10-bit adder for signal <GRN$addsub0005> created at line 270.
+    Found 10-bit subtractor for signal <GRN$addsub0006> created at line 281.
+    Found 10-bit adder for signal <GRN$addsub0007> created at line 314.
+    Found 10-bit adder for signal <GRN$addsub0008> created at line 314.
+    Found 10-bit adder for signal <GRN$addsub0009> created at line 325.
+    Found 10-bit adder for signal <GRN$addsub0010> created at line 325.
+    Found 10-bit adder for signal <GRN$addsub0011> created at line 325.
+    Found 10-bit adder for signal <GRN$addsub0012> created at line 325.
+    Found 10-bit subtractor for signal <GRN$addsub0013> created at line 325.
+    Found 10-bit adder for signal <GRN$addsub0014> created at line 402.
+    Found 10-bit adder for signal <GRN$addsub0015> created at line 402.
+    Found 10-bit adder for signal <GRN$addsub0016> created at line 402.
+    Found 10-bit subtractor for signal <GRN$addsub0017> created at line 402.
+    Found 10-bit adder for signal <GRN$addsub0018> created at line 402.
+    Found 10-bit adder for signal <GRN$addsub0019> created at line 402.
+    Found 10-bit adder for signal <GRN$addsub0020> created at line 402.
+    Found 10-bit adder for signal <GRN$addsub0021> created at line 413.
+    Found 10-bit adder for signal <GRN$addsub0022> created at line 413.
+    Found 10-bit adder for signal <GRN$addsub0023> created at line 413.
+    Found 10-bit adder for signal <GRN$addsub0024> created at line 446.
+    Found 10-bit adder for signal <GRN$addsub0025> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0026> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0027> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0028> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0029> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0030> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0031> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0032> created at line 479.
+    Found 10-bit adder for signal <GRN$addsub0033> created at line 490.
+    Found 10-bit adder for signal <GRN$addsub0034> created at line 490.
+    Found 10-bit adder for signal <GRN$addsub0035> created at line 490.
+    Found 10-bit subtractor for signal <GRN$addsub0036> created at line 490.
+    Found 10-bit adder for signal <GRN$addsub0037> created at line 545.
+    Found 10-bit adder for signal <GRN$addsub0038> created at line 545.
+    Found 10-bit adder for signal <GRN$addsub0039> created at line 545.
+    Found 10-bit adder for signal <GRN$addsub0040> created at line 545.
+    Found 10-bit adder for signal <GRN$addsub0041> created at line 545.
+    Found 10-bit adder for signal <GRN$addsub0042> created at line 545.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0000> created at line 251.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0001> created at line 251.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0002> created at line 259.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0003> created at line 270.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0004> created at line 281.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0005> created at line 292.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0006> created at line 314.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0007> created at line 325.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0008> created at line 336.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0009> created at line 369.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0010> created at line 402.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0011> created at line 402.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0012> created at line 413.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0013> created at line 446.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0014> created at line 479.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0015> created at line 490.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0016> created at line 523.
+    Found 11-bit comparator greatequal for signal <GRN$cmp_ge0017> created at line 561.
+    Found 11-bit comparator greatequal for signal <GRN$cmp_ge0018> created at line 561.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0000> created at line 251.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0001> created at line 251.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0002> created at line 259.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0003> created at line 259.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0004> created at line 270.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0005> created at line 292.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0006> created at line 314.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0007> created at line 325.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0008> created at line 336.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0009> created at line 369.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0010> created at line 446.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0011> created at line 479.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0012> created at line 490.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0013> created at line 512.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0014> created at line 523.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0015> created at line 545.
+    Found 11-bit comparator less for signal <GRN$cmp_lt0016> created at line 561.
+    Found 11-bit comparator less for signal <GRN$cmp_lt0017> created at line 561.
+    Found 10-bit register for signal <height>.
+    Found 10-bit up counter for signal <horz_scan>.
+    Found 11-bit comparator less for signal <HS$cmp_lt0000> created at line 99.
+    Found 10-bit register for signal <inside_height>.
+    Found 1-bit register for signal <mclk>.
+    Found 1-bit register for signal <num_color>.
+    Found 1-bit register for signal <seg_1>.
+    Found 1-bit register for signal <seg_10>.
+    Found 1-bit register for signal <seg_11>.
+    Found 1-bit register for signal <seg_12>.
+    Found 1-bit register for signal <seg_13>.
+    Found 1-bit register for signal <seg_14>.
+    Found 1-bit register for signal <seg_15>.
+    Found 1-bit register for signal <seg_16>.
+    Found 1-bit register for signal <seg_17>.
+    Found 1-bit register for signal <seg_18>.
+    Found 1-bit register for signal <seg_19>.
+    Found 1-bit register for signal <seg_2>.
+    Found 1-bit register for signal <seg_20>.
+    Found 1-bit register for signal <seg_21>.
+    Found 1-bit register for signal <seg_22>.
+    Found 1-bit register for signal <seg_23>.
+    Found 1-bit register for signal <seg_24>.
+    Found 1-bit register for signal <seg_25>.
+    Found 1-bit register for signal <seg_26>.
+    Found 1-bit register for signal <seg_27>.
+    Found 1-bit register for signal <seg_28>.
+    Found 1-bit register for signal <seg_3>.
+    Found 1-bit register for signal <seg_4>.
+    Found 1-bit register for signal <seg_5>.
+    Found 1-bit register for signal <seg_6>.
+    Found 1-bit register for signal <seg_7>.
+    Found 1-bit register for signal <seg_8>.
+    Found 1-bit register for signal <seg_9>.
+    Found 10-bit register for signal <small_side>.
+    Found 10-bit up counter for signal <vert_scan>.
+    Found 10-bit register for signal <width>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   2 Counter(s).
+	inferred  92 D-type flip-flop(s).
+	inferred  43 Adder/Subtractor(s).
+	inferred  38 Comparator(s).
+Unit <VGA> synthesized.
+
+
+Synthesizing Unit <TOP_MODULE>.
+    Related source file is "/home/duarteg/Desktop/SecTrab/TOP_MODULE.vhd".
+Unit <TOP_MODULE> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x60-bit ROM                                          : 1
+# Adders/Subtractors                                   : 47
+ 10-bit adder                                          : 38
+ 10-bit subtractor                                     : 5
+ 4-bit adder                                           : 4
+# Counters                                             : 2
+ 10-bit up counter                                     : 2
+# Registers                                            : 43
+ 1-bit register                                        : 33
+ 10-bit register                                       : 6
+ 4-bit register                                        : 4
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Comparators                                          : 38
+ 10-bit comparator greatequal                          : 17
+ 10-bit comparator less                                : 16
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator less                                : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <uut2/aux/FSM> on signal <aux[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 00
+ 0001  | 10
+ 0010  | 11
+ 0011  | 01
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <uut/state/FSM> on signal <state[1:3]> with user encoding.
+--------------------
+ State  | Encoding
+--------------------
+ state0 | 000
+ state1 | 001
+ state2 | 010
+ state3 | 011
+ state4 | 100
+--------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# ROMs                                                 : 1
+ 4x60-bit ROM                                          : 1
+# Adders/Subtractors                                   : 47
+ 10-bit adder                                          : 38
+ 10-bit subtractor                                     : 5
+ 4-bit adder                                           : 4
+# Counters                                             : 2
+ 10-bit up counter                                     : 2
+# Registers                                            : 109
+ Flip-Flops                                            : 109
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Comparators                                          : 38
+ 10-bit comparator greatequal                          : 17
+ 10-bit comparator less                                : 16
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator less                                : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <dist_9> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dist_8> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dist_7> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dist_6> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dist_5> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dist_4> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <width_9> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <width_8> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <width_7> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <height_9> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <height_8> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <height_4> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <height_2> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <small_side_9> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <small_side_8> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <small_side_7> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <small_side_6> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <small_side_5> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <big_vert_side_9> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <big_vert_side_8> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <big_vert_side_7> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <big_vert_side_3> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <big_vert_side_2> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <big_vert_side_1> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <big_vert_side_0> (without init value) has a constant value of 1 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <inside_height_9> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <inside_height_8> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <inside_height_7> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <inside_height_6> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <inside_height_2> (without init value) has a constant value of 0 in block <VGA>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <inside_height_5> in Unit <VGA> is equivalent to the following 4 FFs/Latches, which will be removed : <big_vert_side_6> <small_side_4> <height_7> <width_1> 
+INFO:Xst:2261 - The FF/Latch <inside_height_4> in Unit <VGA> is equivalent to the following 5 FFs/Latches, which will be removed : <big_vert_side_5> <small_side_1> <small_side_3> <height_6> <width_2> 
+INFO:Xst:2261 - The FF/Latch <height_3> in Unit <VGA> is equivalent to the following 2 FFs/Latches, which will be removed : <width_5> <dist_2> 
+INFO:Xst:2261 - The FF/Latch <width_6> in Unit <VGA> is equivalent to the following FF/Latch, which will be removed : <dist_3> 
+INFO:Xst:2261 - The FF/Latch <inside_height_3> in Unit <VGA> is equivalent to the following 3 FFs/Latches, which will be removed : <big_vert_side_4> <small_side_0> <height_5> 
+INFO:Xst:2261 - The FF/Latch <inside_height_0> in Unit <VGA> is equivalent to the following 2 FFs/Latches, which will be removed : <width_4> <dist_1> 
+INFO:Xst:2261 - The FF/Latch <height_0> in Unit <VGA> is equivalent to the following 2 FFs/Latches, which will be removed : <width_0> <dist_0> 
+
+Optimizing unit <TOP_MODULE> ...
+
+Optimizing unit <CONTROL> ...
+WARNING:Xst:1294 - Latch <SUM> is equivalent to a wire in block <CONTROL>.
+
+Optimizing unit <DATA> ...
+
+Optimizing unit <VGA> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TOP_MODULE, actual ratio is 22.
+FlipFlop uut3/height_0 has been replicated 1 time(s)
+FlipFlop uut3/height_3 has been replicated 1 time(s)
+FlipFlop uut3/inside_height_0 has been replicated 2 time(s)
+FlipFlop uut3/inside_height_4 has been replicated 2 time(s)
+FlipFlop uut3/inside_height_5 has been replicated 2 time(s)
+FlipFlop uut3/width_3 has been replicated 2 time(s)
+FlipFlop uut3/width_6 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 96
+ Flip-Flops                                            : 96
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : TOP_MODULE.ngr
+Top Level Output File Name         : TOP_MODULE
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 1569
+#      GND                         : 1
+#      INV                         : 37
+#      LUT1                        : 67
+#      LUT2                        : 283
+#      LUT2_D                      : 3
+#      LUT3                        : 134
+#      LUT3_D                      : 4
+#      LUT3_L                      : 2
+#      LUT4                        : 211
+#      LUT4_D                      : 15
+#      LUT4_L                      : 9
+#      MULT_AND                    : 23
+#      MUXCY                       : 471
+#      MUXF5                       : 40
+#      VCC                         : 1
+#      XORCY                       : 268
+# FlipFlops/Latches                : 98
+#      FD                          : 37
+#      FDE                         : 18
+#      FDR                         : 34
+#      FDS                         : 7
+#      LD                          : 2
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 6
+#      OBUF                        : 5
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                      400  out of   1920    20%  
+ Number of Slice Flip Flops:             98  out of   3840     2%  
+ Number of 4 input LUTs:                765  out of   3840    19%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    173     6%  
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------+--------------------------+-------+
+Clock Signal                                        | Clock buffer(FF name)    | Load  |
+----------------------------------------------------+--------------------------+-------+
+uut/NEXT_DIGIT_or0000(uut/NEXT_DIGIT_or00001:O)     | NONE(*)(uut/NEXT_DIGIT)  | 2     |
+CLK                                                 | BUFGP                    | 23    |
+uut3/mclk1                                          | BUFG                     | 63    |
+uut3/vert_inc_flag(uut3/vert_inc_flag_cmp_eq00001:O)| NONE(*)(uut3/vert_scan_9)| 10    |
+----------------------------------------------------+--------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 28.176ns (Maximum Frequency: 35.491MHz)
+   Minimum input arrival time before clock: 11.204ns
+   Maximum output required time after clock: 10.822ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 6.390ns (frequency: 156.495MHz)
+  Total number of paths / destination ports: 189 / 39
+-------------------------------------------------------------------------
+Delay:               6.390ns (Levels of Logic = 2)
+  Source:            uut/state_FSM_FFd2 (FF)
+  Destination:       uut2/reg_c_3 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: uut/state_FSM_FFd2 to uut2/reg_c_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.720   1.473  uut/state_FSM_FFd2 (uut/state_FSM_FFd2)
+     LUT2:I0->O           16   0.551   1.576  uut/state_FSM_Out31 (SUM)
+     LUT4:I0->O            4   0.551   0.917  uut2/reg_c_not00021 (uut2/reg_c_not0002)
+     FDE:CE                    0.602          uut2/reg_c_0
+    ----------------------------------------
+    Total                      6.390ns (2.424ns logic, 3.966ns route)
+                                       (37.9% logic, 62.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'uut3/mclk1'
+  Clock period: 28.176ns (frequency: 35.491MHz)
+  Total number of paths / destination ports: 3243748 / 50
+-------------------------------------------------------------------------
+Delay:               28.176ns (Levels of Logic = 25)
+  Source:            uut3/inside_height_4_1 (FF)
+  Destination:       uut3/BLU (FF)
+  Source Clock:      uut3/mclk1 rising
+  Destination Clock: uut3/mclk1 rising
+
+  Data Path: uut3/inside_height_4_1 to uut3/BLU
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              11   0.720   1.339  uut3/inside_height_4_1 (uut3/inside_height_4_1)
+     LUT4:I1->O            5   0.551   1.116  uut3/Madd_GRN_addsub0002_xor<4>11 (uut3/GRN_addsub0002<4>)
+     LUT2:I1->O            1   0.551   0.000  uut3/Madd_GRN_addsub0016_lut<4> (uut3/Madd_GRN_addsub0016_lut<4>)
+     MUXCY:S->O            1   0.500   0.000  uut3/Madd_GRN_addsub0016_cy<4> (uut3/Madd_GRN_addsub0016_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  uut3/Madd_GRN_addsub0016_cy<5> (uut3/Madd_GRN_addsub0016_cy<5>)
+     XORCY:CI->O           3   0.904   0.907  uut3/Madd_GRN_addsub0016_xor<6> (uut3/GRN_addsub0016<6>)
+     INV:I->O              1   0.551   0.000  uut3/Msub_GRN_addsub0017_lut<6>_INV_0 (uut3/Msub_GRN_addsub0017_lut<6>)
+     MUXCY:S->O            1   0.500   0.000  uut3/Msub_GRN_addsub0017_cy<6> (uut3/Msub_GRN_addsub0017_cy<6>)
+     XORCY:CI->O           1   0.904   0.996  uut3/Msub_GRN_addsub0017_xor<7> (uut3/Madd_GRN_addsub0019R6)
+     LUT3:I1->O            1   0.551   0.000  uut3/Madd_GRN_addsub0019_Madd_lut<7> (uut3/Madd_GRN_addsub0019_Madd_lut<7>)
+     MUXCY:S->O            1   0.500   0.000  uut3/Madd_GRN_addsub0019_Madd_cy<7> (uut3/Madd_GRN_addsub0019_Madd_cy<7>)
+     XORCY:CI->O           1   0.904   1.140  uut3/Madd_GRN_addsub0019_Madd_xor<8> (uut3/GRN_addsub0019<8>)
+     LUT1:I0->O            1   0.551   0.000  uut3/Madd_GRN_addsub0020_cy<8>_rt (uut3/Madd_GRN_addsub0020_cy<8>_rt)
+     MUXCY:S->O            0   0.500   0.000  uut3/Madd_GRN_addsub0020_cy<8> (uut3/Madd_GRN_addsub0020_cy<8>)
+     XORCY:CI->O           1   0.904   0.996  uut3/Madd_GRN_addsub0020_xor<9> (uut3/GRN_addsub0020<9>)
+     LUT2:I1->O            1   0.551   0.000  uut3/Mcompar_GRN_cmp_ge0011_lut<9> (uut3/Mcompar_GRN_cmp_ge0011_lut<9>)
+     MUXCY:S->O            8   0.739   1.109  uut3/Mcompar_GRN_cmp_ge0011_cy<9> (uut3/GRN_cmp_ge0011)
+     LUT4:I3->O            2   0.551   0.903  uut3/GRN_mux0057253_SW0 (N121)
+     LUT4:I3->O            1   0.551   0.000  uut3/GRN_mux0057336_SW0_SW0_SW0_G (N236)
+     MUXF5:I1->O           1   0.360   0.869  uut3/GRN_mux0057336_SW0_SW0_SW0 (N215)
+     LUT4:I2->O            3   0.551   0.933  uut3/GRN_mux0057336_SW0 (N171)
+     LUT4:I3->O            1   0.551   0.000  uut3/GRN_mux005715672_SW0_G (N226)
+     MUXF5:I1->O           1   0.360   0.801  uut3/GRN_mux005715672_SW0 (N177)
+     MUXF5:S->O            2   0.621   0.945  uut3/GRN_mux0057456_SW0 (N192)
+     LUT3:I2->O            1   0.551   0.827  uut3/GRN_mux005715564_SW1 (N200)
+     LUT4:I3->O            1   0.551   0.000  uut3/GRN_mux00576851 (uut3/GRN_mux0057685)
+     FDS:D                     0.203          uut3/BLU
+    ----------------------------------------
+    Total                     28.176ns (15.295ns logic, 12.881ns route)
+                                       (54.3% logic, 45.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'uut3/vert_inc_flag'
+  Clock period: 7.746ns (frequency: 129.099MHz)
+  Total number of paths / destination ports: 155 / 20
+-------------------------------------------------------------------------
+Delay:               7.746ns (Levels of Logic = 3)
+  Source:            uut3/vert_scan_6 (FF)
+  Destination:       uut3/vert_scan_9 (FF)
+  Source Clock:      uut3/vert_inc_flag rising
+  Destination Clock: uut3/vert_inc_flag rising
+
+  Data Path: uut3/vert_scan_6 to uut3/vert_scan_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             11   0.720   1.483  uut3/vert_scan_6 (uut3/vert_scan_6)
+     LUT4:I0->O            2   0.551   0.903  uut3/vert_scan_cmp_eq000011 (uut3/N90)
+     LUT4:I3->O            1   0.551   0.827  uut3/vert_scan_cmp_eq0000_SW0 (N102)
+     LUT4:I3->O           10   0.551   1.134  uut3/vert_scan_cmp_eq0000 (uut3/vert_scan_cmp_eq0000)
+     FDR:R                     1.026          uut3/vert_scan_0
+    ----------------------------------------
+    Total                      7.746ns (3.399ns logic, 4.347ns route)
+                                       (43.9% logic, 56.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 12 / 6
+-------------------------------------------------------------------------
+Offset:              4.455ns (Levels of Logic = 2)
+  Source:            NEXTDIGIT (PAD)
+  Destination:       uut/push (FF)
+  Destination Clock: CLK rising
+
+  Data Path: NEXTDIGIT to uut/push
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.821   1.256  NEXTDIGIT_IBUF (NEXTDIGIT_IBUF)
+     LUT3:I0->O            1   0.551   0.801  uut/push_or0000_inv1 (uut/push_or0000_inv)
+     FDR:R                     1.026          uut/push
+    ----------------------------------------
+    Total                      4.455ns (2.398ns logic, 2.057ns route)
+                                       (53.8% logic, 46.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'uut3/mclk1'
+  Total number of paths / destination ports: 42 / 34
+-------------------------------------------------------------------------
+Offset:              11.204ns (Levels of Logic = 9)
+  Source:            COLOR (PAD)
+  Destination:       uut3/BLU (FF)
+  Destination Clock: uut3/mclk1 rising
+
+  Data Path: COLOR to uut3/BLU
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.821   1.246  COLOR_IBUF (COLOR_IBUF)
+     LUT4:I0->O            2   0.551   1.072  uut3/GRN_mux005715236 (uut3/GRN_mux005715236)
+     LUT3:I1->O            1   0.551   0.000  uut3/GRN_mux005715285_F (N239)
+     MUXF5:I0->O           1   0.360   0.827  uut3/GRN_mux005715285 (uut3/GRN_mux005715285)
+     LUT4_L:I3->LO         1   0.551   0.168  uut3/GRN_and00241_SW0 (N147)
+     LUT4:I2->O            1   0.551   0.827  uut3/GRN_mux005715353 (uut3/GRN_mux005715353)
+     LUT4:I3->O            1   0.551   0.827  uut3/GRN_mux005715463_SW0 (N161)
+     LUT4:I3->O            1   0.551   0.996  uut3/GRN_mux005715463 (uut3/GRN_mux005715463)
+     LUT4:I1->O            1   0.551   0.000  uut3/GRN_mux00576851 (uut3/GRN_mux0057685)
+     FDS:D                     0.203          uut3/BLU
+    ----------------------------------------
+    Total                     11.204ns (5.241ns logic, 5.963ns route)
+                                       (46.8% logic, 53.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'uut3/mclk1'
+  Total number of paths / destination ports: 8 / 4
+-------------------------------------------------------------------------
+Offset:              10.212ns (Levels of Logic = 3)
+  Source:            uut3/horz_scan_5 (FF)
+  Destination:       HS (PAD)
+  Source Clock:      uut3/mclk1 rising
+
+  Data Path: uut3/horz_scan_5 to HS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             24   0.720   2.136  uut3/horz_scan_5 (uut3/horz_scan_5)
+     LUT4:I0->O            1   0.551   0.000  uut3/HS11 (uut3/HS1)
+     MUXF5:I0->O           1   0.360   0.801  uut3/HS1_f5 (HS_OBUF)
+     OBUF:I->O                 5.644          HS_OBUF (HS)
+    ----------------------------------------
+    Total                     10.212ns (7.275ns logic, 2.937ns route)
+                                       (71.2% logic, 28.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'uut3/vert_inc_flag'
+  Total number of paths / destination ports: 9 / 1
+-------------------------------------------------------------------------
+Offset:              10.822ns (Levels of Logic = 3)
+  Source:            uut3/vert_scan_6 (FF)
+  Destination:       VS (PAD)
+  Source Clock:      uut3/vert_inc_flag rising
+
+  Data Path: uut3/vert_scan_6 to VS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             11   0.720   1.483  uut3/vert_scan_6 (uut3/vert_scan_6)
+     LUT4:I0->O            2   0.551   1.072  uut3/vert_scan_cmp_eq000011 (uut3/N90)
+     LUT3:I1->O            1   0.551   0.801  uut3/VS_cmp_eq00001 (VS_OBUF)
+     OBUF:I->O                 5.644          VS_OBUF (VS)
+    ----------------------------------------
+    Total                     10.822ns (7.466ns logic, 3.356ns route)
+                                       (69.0% logic, 31.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.23 secs
+ 
+--> 
+
+
+Total memory usage is 543188 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   38 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

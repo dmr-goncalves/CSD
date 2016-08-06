@@ -1,0 +1,5 @@
+set -tmpdir "/home/duarteg/Desktop/SecTrab/xst/projnav.tmp"
+set -xsthdpdir "/home/duarteg/Desktop/SecTrab/xst"
+elaborate
+-ifn VGA.prj
+-ifmt mixed

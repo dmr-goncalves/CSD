@@ -1,0 +1,1118 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Reading design: TOP.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TOP.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TOP"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : TOP
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/duarteg/CSDTrab/parking/VGA.vhd" in Library work.
+Entity <VGA> compiled.
+Entity <VGA> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/home/duarteg/CSDTrab/parking/DISPLAY.vhd" in Library work.
+Entity <DISPLAY> compiled.
+Entity <DISPLAY> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/home/duarteg/CSDTrab/parking/park.vhd" in Library work.
+Entity <park> compiled.
+Entity <park> (Architecture <Structural>) compiled.
+Compiling vhdl file "/home/duarteg/CSDTrab/parking/TOP.vhd" in Library work.
+Entity <TOP> compiled.
+Entity <TOP> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <TOP> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <VGA> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <DISPLAY> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <park> in library <work> (architecture <Structural>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <TOP> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:753 - "/home/duarteg/CSDTrab/parking/TOP.vhd" line 182: Unconnected output port 'FreeSpacesTotal' of component 'park'.
+WARNING:Xst:753 - "/home/duarteg/CSDTrab/parking/TOP.vhd" line 182: Unconnected output port 'TotalCarsFloor1' of component 'park'.
+WARNING:Xst:753 - "/home/duarteg/CSDTrab/parking/TOP.vhd" line 182: Unconnected output port 'TotalCarsFloor2' of component 'park'.
+Entity <TOP> analyzed. Unit <TOP> generated.
+
+Analyzing Entity <VGA> in library <work> (Architecture <Behavioral>).
+INFO:Xst:2679 - Register <back_color> in unit <VGA> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <num_color> in unit <VGA> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <vert_pos> in unit <VGA> has a constant value of 0001100100 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <horz_pos> in unit <VGA> has a constant value of 0011001000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <dist> in unit <VGA> has a constant value of 0000000011 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <height> in unit <VGA> has a constant value of 0000100001 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <width> in unit <VGA> has a constant value of 0000011001 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <small_side> in unit <VGA> has a constant value of 0000000101 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <inside_height> in unit <VGA> has a constant value of 0000001001 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <big_horiz_side> in unit <VGA> has a constant value of 0000001111 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <big_vert_side> in unit <VGA> has a constant value of 0000010000 during circuit operation. The register is replaced by logic.
+Entity <VGA> analyzed. Unit <VGA> generated.
+
+Analyzing Entity <DISPLAY> in library <work> (Architecture <Behavioral>).
+Entity <DISPLAY> analyzed. Unit <DISPLAY> generated.
+
+Analyzing Entity <park> in library <work> (Architecture <Structural>).
+Entity <park> analyzed. Unit <park> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <VGA>.
+    Related source file is "/home/duarteg/CSDTrab/parking/VGA.vhd".
+WARNING:Xst:1780 - Signal <horz_scan_digit> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Register <GRN> equivalent to <BLU> has been removed
+    Register <RED> equivalent to <BLU> has been removed
+    Found 16x1-bit ROM for signal <seg_35$mux0001> created at line 221.
+    Found 16x1-bit ROM for signal <seg_7$mux0001> created at line 113.
+    Found 1-bit register for signal <BLU>.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0000> created at line 340.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0001> created at line 340.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0002> created at line 348.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0003> created at line 359.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0004> created at line 370.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0005> created at line 381.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0006> created at line 403.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0007> created at line 414.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0008> created at line 425.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0009> created at line 458.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0010> created at line 491.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0011> created at line 502.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0012> created at line 535.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0013> created at line 568.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0014> created at line 579.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0015> created at line 612.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0016> created at line 645.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0017> created at line 667.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0018> created at line 678.
+    Found 10-bit comparator greatequal for signal <GRN$cmp_ge0019> created at line 711.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0000> created at line 340.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0001> created at line 340.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0002> created at line 348.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0003> created at line 348.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0004> created at line 359.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0005> created at line 381.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0006> created at line 403.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0007> created at line 414.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0008> created at line 425.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0009> created at line 458.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0010> created at line 491.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0011> created at line 502.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0012> created at line 535.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0013> created at line 568.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0014> created at line 579.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0015> created at line 612.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0016> created at line 645.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0017> created at line 656.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0018> created at line 667.
+    Found 10-bit comparator less for signal <GRN$cmp_lt0019> created at line 711.
+    Found 10-bit up counter for signal <horz_scan>.
+    Found 11-bit comparator less for signal <HS$cmp_lt0000> created at line 102.
+    Found 1-bit register for signal <mclk>.
+    Found 1-bit register for signal <seg_1>.
+    Found 1-bit register for signal <seg_10>.
+    Found 1-bit register for signal <seg_11>.
+    Found 1-bit register for signal <seg_12>.
+    Found 1-bit register for signal <seg_13>.
+    Found 1-bit register for signal <seg_14>.
+    Found 1-bit register for signal <seg_15>.
+    Found 1-bit register for signal <seg_16>.
+    Found 1-bit register for signal <seg_17>.
+    Found 1-bit register for signal <seg_18>.
+    Found 1-bit register for signal <seg_19>.
+    Found 1-bit register for signal <seg_2>.
+    Found 1-bit register for signal <seg_20>.
+    Found 1-bit register for signal <seg_21>.
+    Found 1-bit register for signal <seg_22>.
+    Found 1-bit register for signal <seg_23>.
+    Found 1-bit register for signal <seg_24>.
+    Found 1-bit register for signal <seg_25>.
+    Found 1-bit register for signal <seg_26>.
+    Found 1-bit register for signal <seg_27>.
+    Found 1-bit register for signal <seg_28>.
+    Found 1-bit register for signal <seg_29>.
+    Found 1-bit register for signal <seg_3>.
+    Found 1-bit register for signal <seg_30>.
+    Found 1-bit register for signal <seg_31>.
+    Found 1-bit register for signal <seg_32>.
+    Found 1-bit register for signal <seg_33>.
+    Found 1-bit register for signal <seg_34>.
+    Found 1-bit register for signal <seg_35>.
+    Found 1-bit register for signal <seg_36>.
+    Found 1-bit register for signal <seg_37>.
+    Found 1-bit register for signal <seg_38>.
+    Found 1-bit register for signal <seg_39>.
+    Found 1-bit register for signal <seg_4>.
+    Found 1-bit register for signal <seg_40>.
+    Found 1-bit register for signal <seg_41>.
+    Found 1-bit register for signal <seg_42>.
+    Found 1-bit register for signal <seg_43>.
+    Found 1-bit register for signal <seg_44>.
+    Found 1-bit register for signal <seg_45>.
+    Found 1-bit register for signal <seg_46>.
+    Found 1-bit register for signal <seg_47>.
+    Found 1-bit register for signal <seg_48>.
+    Found 1-bit register for signal <seg_49>.
+    Found 1-bit register for signal <seg_5>.
+    Found 1-bit register for signal <seg_50>.
+    Found 1-bit register for signal <seg_51>.
+    Found 1-bit register for signal <seg_52>.
+    Found 1-bit register for signal <seg_53>.
+    Found 1-bit register for signal <seg_54>.
+    Found 1-bit register for signal <seg_55>.
+    Found 1-bit register for signal <seg_56>.
+    Found 1-bit register for signal <seg_6>.
+    Found 1-bit register for signal <seg_7>.
+    Found 1-bit register for signal <seg_8>.
+    Found 1-bit register for signal <seg_9>.
+    Found 10-bit up counter for signal <vert_scan>.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   2 Counter(s).
+	inferred  58 D-type flip-flop(s).
+	inferred  41 Comparator(s).
+Unit <VGA> synthesized.
+
+
+Synthesizing Unit <DISPLAY>.
+    Related source file is "/home/duarteg/CSDTrab/parking/DISPLAY.vhd".
+    Using one-hot encoding for signal <num_alg>.
+    Found 16x2-bit ROM for signal <alg$rom0000>.
+    Found 8-bit register for signal <algarismo>.
+    Found 1-bit register for signal <an0>.
+    Found 1-bit register for signal <an1>.
+    Found 1-bit register for signal <an2>.
+    Found 1-bit register for signal <an3>.
+    Found 4-bit register for signal <alg>.
+    Found 19-bit up counter for signal <cont_clock>.
+    Found 4-bit register for signal <num_alg>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred  20 D-type flip-flop(s).
+Unit <DISPLAY> synthesized.
+
+
+Synthesizing Unit <park>.
+    Related source file is "/home/duarteg/CSDTrab/parking/park.vhd".
+WARNING:Xst:646 - Signal <bcd6<11:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <bcd5<11:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <bcd4<11:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <bcd3<11:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <bcd2<11:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <bcd1<11:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <LEDS>.
+    Found 4-bit comparator greater for signal <bcd0_3$cmp_gt0000> created at line 170.
+    Found 4-bit comparator greater for signal <bcd0_3$cmp_gt0001> created at line 170.
+    Found 4-bit comparator greater for signal <bcd0_3$cmp_gt0002> created at line 170.
+    Found 4-bit comparator greater for signal <bcd0_3$cmp_gt0003> created at line 170.
+    Found 4-bit comparator greater for signal <bcd0_3$cmp_gt0004> created at line 170.
+    Found 4-bit adder for signal <bcd0_3_0$add0000> created at line 171.
+    Found 4-bit adder for signal <bcd0_3_0$add0001> created at line 171.
+    Found 4-bit adder for signal <bcd0_3_0$add0002> created at line 171.
+    Found 4-bit adder for signal <bcd0_3_0$add0003> created at line 171.
+    Found 4-bit adder for signal <bcd0_3_0$add0004> created at line 171.
+    Found 4-bit comparator greater for signal <bcd0_7$cmp_gt0000> created at line 174.
+    Found 4-bit comparator greater for signal <bcd0_7$cmp_gt0001> created at line 174.
+    Found 4-bit adder for signal <bcd0_7_4$add0000> created at line 175.
+    Found 4-bit adder for signal <bcd0_7_4$add0001> created at line 175.
+    Found 12-bit register for signal <bcd1>.
+    Found 4-bit comparator greater for signal <bcd10_3$cmp_gt0000> created at line 170.
+    Found 4-bit comparator greater for signal <bcd10_3$cmp_gt0001> created at line 170.
+    Found 4-bit comparator greater for signal <bcd10_3$cmp_gt0002> created at line 170.
+    Found 4-bit comparator greater for signal <bcd10_3$cmp_gt0003> created at line 170.
+    Found 4-bit comparator greater for signal <bcd10_3$cmp_gt0004> created at line 170.
+    Found 4-bit adder for signal <bcd10_3_0$add0000> created at line 171.
+    Found 4-bit adder for signal <bcd10_3_0$add0001> created at line 171.
+    Found 4-bit adder for signal <bcd10_3_0$add0002> created at line 171.
+    Found 4-bit adder for signal <bcd10_3_0$add0003> created at line 171.
+    Found 4-bit adder for signal <bcd10_3_0$add0004> created at line 171.
+    Found 4-bit comparator greater for signal <bcd10_6$cmp_gt0000> created at line 174.
+    Found 4-bit comparator greater for signal <bcd10_6$cmp_gt0001> created at line 174.
+    Found 4-bit adder for signal <bcd10_7_4$add0000> created at line 175.
+    Found 4-bit adder for signal <bcd10_7_4$add0001> created at line 175.
+    Found 12-bit register for signal <bcd2>.
+    Found 12-bit register for signal <bcd3>.
+    Found 12-bit register for signal <bcd4>.
+    Found 12-bit register for signal <bcd5>.
+    Found 12-bit register for signal <bcd6>.
+    Found 4-bit comparator greater for signal <bcd7_3$cmp_gt0000> created at line 170.
+    Found 4-bit comparator greater for signal <bcd7_3$cmp_gt0001> created at line 170.
+    Found 4-bit comparator greater for signal <bcd7_3$cmp_gt0002> created at line 170.
+    Found 4-bit comparator greater for signal <bcd7_3$cmp_gt0003> created at line 170.
+    Found 4-bit comparator greater for signal <bcd7_3$cmp_gt0004> created at line 170.
+    Found 4-bit adder for signal <bcd7_3_0$add0000> created at line 171.
+    Found 4-bit adder for signal <bcd7_3_0$add0001> created at line 171.
+    Found 4-bit adder for signal <bcd7_3_0$add0002> created at line 171.
+    Found 4-bit adder for signal <bcd7_3_0$add0003> created at line 171.
+    Found 4-bit adder for signal <bcd7_3_0$add0004> created at line 171.
+    Found 4-bit comparator greater for signal <bcd7_7$cmp_gt0000> created at line 174.
+    Found 4-bit comparator greater for signal <bcd7_7$cmp_gt0001> created at line 174.
+    Found 4-bit adder for signal <bcd7_7_4$add0000> created at line 175.
+    Found 4-bit adder for signal <bcd7_7_4$add0001> created at line 175.
+    Found 4-bit comparator greater for signal <bcd8_3$cmp_gt0000> created at line 170.
+    Found 4-bit comparator greater for signal <bcd8_3$cmp_gt0001> created at line 170.
+    Found 4-bit comparator greater for signal <bcd8_3$cmp_gt0002> created at line 170.
+    Found 4-bit comparator greater for signal <bcd8_3$cmp_gt0003> created at line 170.
+    Found 4-bit comparator greater for signal <bcd8_3$cmp_gt0004> created at line 170.
+    Found 4-bit adder for signal <bcd8_3_0$add0000> created at line 171.
+    Found 4-bit adder for signal <bcd8_3_0$add0001> created at line 171.
+    Found 4-bit adder for signal <bcd8_3_0$add0002> created at line 171.
+    Found 4-bit adder for signal <bcd8_3_0$add0003> created at line 171.
+    Found 4-bit adder for signal <bcd8_3_0$add0004> created at line 171.
+    Found 4-bit comparator greater for signal <bcd8_7$cmp_gt0000> created at line 174.
+    Found 4-bit comparator greater for signal <bcd8_7$cmp_gt0001> created at line 174.
+    Found 4-bit adder for signal <bcd8_7_4$add0000> created at line 175.
+    Found 4-bit adder for signal <bcd8_7_4$add0001> created at line 175.
+    Found 4-bit comparator greater for signal <bcd9_3$cmp_gt0000> created at line 170.
+    Found 4-bit comparator greater for signal <bcd9_3$cmp_gt0001> created at line 170.
+    Found 4-bit comparator greater for signal <bcd9_3$cmp_gt0002> created at line 170.
+    Found 4-bit comparator greater for signal <bcd9_3$cmp_gt0003> created at line 170.
+    Found 4-bit comparator greater for signal <bcd9_3$cmp_gt0004> created at line 170.
+    Found 4-bit adder for signal <bcd9_3_0$add0000> created at line 171.
+    Found 4-bit adder for signal <bcd9_3_0$add0001> created at line 171.
+    Found 4-bit adder for signal <bcd9_3_0$add0002> created at line 171.
+    Found 4-bit adder for signal <bcd9_3_0$add0003> created at line 171.
+    Found 4-bit adder for signal <bcd9_3_0$add0004> created at line 171.
+    Found 4-bit comparator greater for signal <bcd9_7$cmp_gt0000> created at line 174.
+    Found 4-bit comparator greater for signal <bcd9_7$cmp_gt0001> created at line 174.
+    Found 4-bit adder for signal <bcd9_7_4$add0000> created at line 175.
+    Found 4-bit adder for signal <bcd9_7_4$add0001> created at line 175.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0000> created at line 170.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0001> created at line 170.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0002> created at line 170.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0003> created at line 170.
+    Found 4-bit comparator greater for signal <bcd_3$cmp_gt0004> created at line 170.
+    Found 4-bit adder for signal <bcd_3_0$add0000> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0001> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0002> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0003> created at line 171.
+    Found 4-bit adder for signal <bcd_3_0$add0004> created at line 171.
+    Found 4-bit comparator greater for signal <bcd_7$cmp_gt0000> created at line 174.
+    Found 4-bit comparator greater for signal <bcd_7$cmp_gt0001> created at line 174.
+    Found 4-bit adder for signal <bcd_7_4$add0000> created at line 175.
+    Found 4-bit adder for signal <bcd_7_4$add0001> created at line 175.
+    Found 1-bit register for signal <event_arriveIn2_MINUS>.
+    Found 1-bit register for signal <event_arriveIn2_PLUS>.
+    Found 1-bit register for signal <event_arriveIn_MINUS>.
+    Found 1-bit register for signal <event_arriveIn_PLUS>.
+    Found 1-bit register for signal <event_arriveOutFloor1_MINUS>.
+    Found 1-bit register for signal <event_arriveOutFloor1_Plus>.
+    Found 1-bit register for signal <event_arriveOutFloor2_MINUS>.
+    Found 1-bit register for signal <event_arriveOutFloor2_Plus>.
+    Found 1-bit register for signal <event_rampDOWN_MINUS>.
+    Found 1-bit register for signal <event_rampDOWN_PLUS>.
+    Found 1-bit register for signal <event_rampDOWNSensor2_MINUS>.
+    Found 1-bit register for signal <event_rampDOWNSensor2_PLUS>.
+    Found 1-bit register for signal <event_rampUP_MINUS>.
+    Found 1-bit register for signal <event_rampUP_PLUS>.
+    Found 1-bit register for signal <event_rampUPSensor2_MINUS>.
+    Found 1-bit register for signal <event_rampUPSensor2_PLUS>.
+    Found 7-bit comparator greater for signal <LEDS$cmp_gt0000> created at line 918.
+    Found 7-bit comparator greater for signal <LEDS$cmp_gt0001> created at line 920.
+    Found 7-bit comparator greater for signal <LEDS$cmp_gt0002> created at line 922.
+    Found 7-bit comparator greater for signal <LEDS$cmp_gt0003> created at line 924.
+    Found 7-bit comparator greater for signal <LEDS$cmp_gt0004> created at line 926.
+    Found 7-bit comparator greater for signal <LEDS$cmp_gt0005> created at line 928.
+    Found 7-bit comparator greater for signal <LEDS$cmp_gt0006> created at line 930.
+    Found 7-bit comparator lessequal for signal <LEDS$cmp_le0000> created at line 918.
+    Found 7-bit comparator lessequal for signal <LEDS$cmp_le0001> created at line 920.
+    Found 7-bit comparator lessequal for signal <LEDS$cmp_le0002> created at line 922.
+    Found 7-bit comparator lessequal for signal <LEDS$cmp_le0003> created at line 924.
+    Found 7-bit comparator lessequal for signal <LEDS$cmp_le0004> created at line 926.
+    Found 7-bit comparator lessequal for signal <LEDS$cmp_le0005> created at line 928.
+    Found 7-bit comparator lessequal for signal <LEDS$cmp_le0006> created at line 930.
+    Found 7-bit comparator greater for signal <new_value$cmp_gt0000> created at line 811.
+    Found 7-bit comparator greater for signal <new_value$cmp_gt0001> created at line 843.
+    Found 7-bit comparator greater for signal <new_value$cmp_gt0002> created at line 860.
+    Found 1-bit register for signal <p_136<0>>.
+    Found 1-bit adder for signal <p_136_0$add0000> created at line 707.
+    Found 1-bit adder for signal <p_136_add$addsub0000> created at line 580.
+    Found 7-bit comparator greatequal for signal <p_136_add$cmp_ge0000> created at line 558.
+    Found 1-bit subtractor for signal <p_136_avail$addsub0000> created at line 571.
+    Found 1-bit subtractor for signal <p_136_avail$addsub0001> created at line 638.
+    Found 1-bit register for signal <p_137<0>>.
+    Found 1-bit adder for signal <p_137_0$add0000> created at line 708.
+    Found 1-bit adder for signal <p_137_add$addsub0000> created at line 623.
+    Found 1-bit subtractor for signal <p_137_avail$addsub0000> created at line 553.
+    Found 1-bit subtractor for signal <p_137_avail$addsub0001> created at line 579.
+    Found 1-bit register for signal <p_14<0>>.
+    Found 1-bit adder for signal <p_14_0$add0000> created at line 697.
+    Found 1-bit subtractor for signal <p_14_avail$addsub0000> created at line 471.
+    Found 1-bit register for signal <p_15<0>>.
+    Found 1-bit register for signal <p_151<0>>.
+    Found 1-bit adder for signal <p_151_0$add0000> created at line 709.
+    Found 1-bit adder for signal <p_151_add$addsub0000> created at line 606.
+    Found 1-bit subtractor for signal <p_151_avail$addsub0000> created at line 597.
+    Found 1-bit subtractor for signal <p_151_avail$addsub0001> created at line 662.
+    Found 1-bit register for signal <p_152<0>>.
+    Found 1-bit adder for signal <p_152_0$add0000> created at line 710.
+    Found 1-bit adder for signal <p_152_add$addsub0000> created at line 631.
+    Found 1-bit subtractor for signal <p_152_avail$addsub0000> created at line 605.
+    Found 1-bit subtractor for signal <p_152_avail$addsub0001> created at line 614.
+    Found 1-bit adder for signal <p_15_0$add0000> created at line 698.
+    Found 1-bit subtractor for signal <p_15_avail$addsub0000> created at line 480.
+    Found 1-bit register for signal <p_16<0>>.
+    Found 7-bit register for signal <p_167>.
+    Found 7-bit adder for signal <p_167$add0000> created at line 711.
+    Found 7-bit adder for signal <p_167_add$addsub0000> created at line 639.
+    Found 7-bit adder for signal <p_167_add$addsub0001> created at line 647.
+    Found 7-bit adder for signal <p_167_add$addsub0002> created at line 690.
+    Found 7-bit subtractor for signal <p_167_avail$addsub0000> created at line 535.
+    Found 7-bit subtractor for signal <p_167_avail$addsub0001> created at line 562.
+    Found 1-bit adder for signal <p_16_0$add0000> created at line 699.
+    Found 1-bit subtractor for signal <p_16_avail$addsub0000> created at line 490.
+    Found 1-bit register for signal <p_172<0>>.
+    Found 1-bit adder for signal <p_172_0$add0000> created at line 712.
+    Found 1-bit subtractor for signal <p_172_avail$addsub0000> created at line 622.
+    Found 1-bit subtractor for signal <p_172_avail$addsub0001> created at line 654.
+    Found 1-bit register for signal <p_188<0>>.
+    Found 1-bit adder for signal <p_188_0$add0000> created at line 713.
+    Found 1-bit subtractor for signal <p_188_avail$addsub0000> created at line 630.
+    Found 1-bit subtractor for signal <p_188_avail$addsub0001> created at line 646.
+    Found 1-bit register for signal <p_2<0>>.
+    Found 7-bit register for signal <p_212>.
+    Found 7-bit adder for signal <p_212$add0000> created at line 714.
+    Found 7-bit adder for signal <p_212_add$addsub0000> created at line 663.
+    Found 7-bit subtractor for signal <p_212_avail$addsub0000> created at line 481.
+    Found 7-bit subtractor for signal <p_212_avail$addsub0001> created at line 588.
+    Found 7-bit comparator greatequal for signal <p_212_avail$cmp_ge0000> created at line 476.
+    Found 7-bit comparator greatequal for signal <p_212_avail$cmp_ge0001> created at line 584.
+    Found 1-bit adder for signal <p_2_0$add0000> created at line 694.
+    Found 1-bit adder for signal <p_2_add$addsub0000> created at line 679.
+    Found 1-bit subtractor for signal <p_2_avail$addsub0000> created at line 455.
+    Found 1-bit register for signal <p_3<0>>.
+    Found 1-bit register for signal <p_33<0>>.
+    Found 1-bit adder for signal <p_33_0$add0000> created at line 700.
+    Found 1-bit adder for signal <p_33_add$addsub0000> created at line 671.
+    Found 1-bit subtractor for signal <p_33_avail$addsub0000> created at line 498.
+    Found 1-bit register for signal <p_34<0>>.
+    Found 1-bit adder for signal <p_34_0$add0000> created at line 701.
+    Found 1-bit subtractor for signal <p_34_avail$addsub0000> created at line 507.
+    Found 1-bit subtractor for signal <p_34_avail$addsub0001> created at line 670.
+    Found 1-bit register for signal <p_35<0>>.
+    Found 1-bit adder for signal <p_35_0$add0000> created at line 702.
+    Found 7-bit comparator greatequal for signal <p_35_add$cmp_ge0000> created at line 503.
+    Found 1-bit subtractor for signal <p_35_avail$addsub0000> created at line 517.
+    Found 1-bit adder for signal <p_3_0$add0000> created at line 695.
+    Found 1-bit subtractor for signal <p_3_avail$addsub0000> created at line 678.
+    Found 1-bit subtractor for signal <p_3_avail$addsub0001> created at line 687.
+    Found 1-bit register for signal <p_4<0>>.
+    Found 1-bit adder for signal <p_4_0$add0000> created at line 696.
+    Found 1-bit subtractor for signal <p_4_avail$addsub0000> created at line 463.
+    Found 7-bit register for signal <p_63>.
+    Found 7-bit adder for signal <p_63$add0000> created at line 703.
+    Found 7-bit adder for signal <p_63_add$addsub0000> created at line 537.
+    Found 7-bit subtractor for signal <p_63_avail$addsub0000> created at line 508.
+    Found 7-bit subtractor for signal <p_63_avail$addsub0001> created at line 688.
+    Found 7-bit comparator greatequal for signal <p_63_avail$cmp_ge0000> created at line 683.
+    Found 1-bit register for signal <p_79<0>>.
+    Found 1-bit adder for signal <p_79_0$add0000> created at line 704.
+    Found 1-bit subtractor for signal <p_79_avail$addsub0000> created at line 525.
+    Found 1-bit register for signal <p_80<0>>.
+    Found 1-bit adder for signal <p_80_0$add0000> created at line 705.
+    Found 1-bit subtractor for signal <p_80_avail$addsub0000> created at line 534.
+    Found 1-bit register for signal <p_81<0>>.
+    Found 1-bit adder for signal <p_81_0$add0000> created at line 706.
+    Found 7-bit comparator greatequal for signal <p_81_add$cmp_ge0000> created at line 530.
+    Found 1-bit subtractor for signal <p_81_avail$addsub0000> created at line 544.
+    Found 1-bit register for signal <prev_arriveIn>.
+    Found 1-bit register for signal <prev_arriveIn2>.
+    Found 1-bit register for signal <prev_arriveOutFloor1>.
+    Found 1-bit register for signal <prev_arriveOutFloor2>.
+    Found 1-bit register for signal <prev_rampDOWN>.
+    Found 1-bit register for signal <prev_rampDOWNSensor2>.
+    Found 1-bit register for signal <prev_rampUP>.
+    Found 1-bit register for signal <prev_rampUPSensor2>.
+    Found 1-bit register for signal <s_arriveIn>.
+    Found 1-bit register for signal <s_arriveIn2>.
+    Found 1-bit register for signal <s_arriveOutFloor1>.
+    Found 1-bit register for signal <s_arriveOutFloor2>.
+    Found 5-bit register for signal <s_FreeCarsFloor1>.
+    Found 7-bit comparator greatequal for signal <s_FreeCarsFloor1$cmp_ge0000> created at line 896.
+    Found 5-bit adder for signal <s_FreeCarsFloor1$sub0000> created at line 902.
+    Found 6-bit register for signal <s_FreeCarsFloor2>.
+    Found 7-bit comparator greatequal for signal <s_FreeCarsFloor2$cmp_ge0000> created at line 874.
+    Found 6-bit adder for signal <s_FreeCarsFloor2$sub0000> created at line 880.
+    Found 4-bit register for signal <s_FreeSpacesAlgFloor1_1>.
+    Found 4-bit register for signal <s_FreeSpacesAlgFloor1_2>.
+    Found 4-bit register for signal <s_FreeSpacesAlgFloor2_1>.
+    Found 4-bit register for signal <s_FreeSpacesAlgFloor2_2>.
+    Found 4-bit register for signal <s_FreeSpacesAlgTotal_1>.
+    Found 4-bit register for signal <s_FreeSpacesAlgTotal_2>.
+    Found 7-bit register for signal <s_FreeSpacesTotal>.
+    Found 32-bit comparator greater for signal <s_FreeSpacesTotal$cmp_gt0000> created at line 819.
+    Found 32-bit comparator less for signal <s_FreeSpacesTotal$cmp_lt0000> created at line 819.
+    Found 1-bit register for signal <s_gateOpenIn1>.
+    Found 32-bit comparator greater for signal <s_gateOpenIn1$cmp_gt0000> created at line 751.
+    Found 32-bit comparator less for signal <s_gateOpenIn1$cmp_lt0000> created at line 751.
+    Found 1-bit register for signal <s_gateOpenIn2>.
+    Found 32-bit comparator greater for signal <s_gateOpenIn2$cmp_gt0000> created at line 785.
+    Found 32-bit comparator less for signal <s_gateOpenIn2$cmp_lt0000> created at line 785.
+    Found 1-bit register for signal <s_gateOpenOutFloor1>.
+    Found 32-bit comparator greater for signal <s_gateOpenOutFloor1$cmp_gt0000> created at line 768.
+    Found 32-bit comparator less for signal <s_gateOpenOutFloor1$cmp_lt0000> created at line 768.
+    Found 1-bit register for signal <s_gateOpenOutFloor2>.
+    Found 32-bit comparator greater for signal <s_gateOpenOutFloor2$cmp_gt0000> created at line 802.
+    Found 32-bit comparator less for signal <s_gateOpenOutFloor2$cmp_lt0000> created at line 802.
+    Found 1-bit register for signal <s_gotTicket1>.
+    Found 1-bit register for signal <s_gotTicket2>.
+    Found 4-bit register for signal <s_OccupiedSpacesAlgFloor1_1>.
+    Found 7-bit comparator less for signal <s_OccupiedSpacesAlgFloor1_1$cmp_lt0000> created at line 896.
+    Found 4-bit register for signal <s_OccupiedSpacesAlgFloor1_2>.
+    Found 4-bit register for signal <s_OccupiedSpacesAlgFloor2_1>.
+    Found 7-bit comparator less for signal <s_OccupiedSpacesAlgFloor2_1$cmp_lt0000> created at line 874.
+    Found 4-bit register for signal <s_OccupiedSpacesAlgFloor2_2>.
+    Found 4-bit register for signal <s_OccupiedSpacesAlgTotal_1>.
+    Found 4-bit register for signal <s_OccupiedSpacesAlgTotal_2>.
+    Found 7-bit register for signal <s_OccupiedSpacesTotal>.
+    Found 7-bit adder for signal <s_OccupiedSpacesTotal$sub0000> created at line 831.
+    Found 1-bit register for signal <s_payFloor1>.
+    Found 1-bit register for signal <s_payFloor2>.
+    Found 1-bit register for signal <s_rampDOWN>.
+    Found 1-bit register for signal <s_rampDOWNSensor2>.
+    Found 1-bit register for signal <s_rampUP>.
+    Found 1-bit register for signal <s_rampUPSensor2>.
+    Found 7-bit register for signal <s_TotalCarsFloor1>.
+    Found 32-bit comparator greater for signal <s_TotalCarsFloor1$cmp_gt0000> created at line 851.
+    Found 32-bit comparator less for signal <s_TotalCarsFloor1$cmp_lt0000> created at line 851.
+    Found 7-bit register for signal <s_TotalCarsFloor2>.
+    Found 32-bit comparator greater for signal <s_TotalCarsFloor2$cmp_gt0000> created at line 868.
+    Found 32-bit comparator less for signal <s_TotalCarsFloor2$cmp_lt0000> created at line 868.
+    Found 8-bit register for signal <std_vector1>.
+    Found 8-bit register for signal <std_vector2>.
+    Found 8-bit register for signal <std_vector3>.
+    Found 8-bit register for signal <std_vector4>.
+    Found 8-bit register for signal <std_vector5>.
+    Found 8-bit register for signal <std_vector6>.
+    Summary:
+	inferred 287 D-type flip-flop(s).
+	inferred 109 Adder/Subtractor(s).
+	inferred  83 Comparator(s).
+Unit <park> synthesized.
+
+
+Synthesizing Unit <TOP>.
+    Related source file is "/home/duarteg/CSDTrab/parking/TOP.vhd".
+WARNING:Xst:1306 - Output <gateOpenIn1> is never assigned.
+WARNING:Xst:1306 - Output <gateOpenIn2> is never assigned.
+WARNING:Xst:1306 - Output <gateOpenOutFloor1> is never assigned.
+WARNING:Xst:1306 - Output <gateOpenOutFloor2> is never assigned.
+WARNING:Xst:646 - Signal <s_gateOpenOutFloor2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <s_gateOpenOutFloor1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <s_gateOpenIn2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <s_gateOpenIn1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <TOP> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 16x1-bit ROM                                          : 2
+ 16x2-bit ROM                                          : 1
+# Adders/Subtractors                                   : 109
+ 1-bit adder                                           : 24
+ 1-bit subtractor                                      : 26
+ 4-bit adder                                           : 42
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+ 7-bit adder                                           : 9
+ 7-bit subtractor                                      : 6
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 19-bit up counter                                     : 1
+# Registers                                            : 164
+ 1-bit register                                        : 128
+ 12-bit register                                       : 6
+ 4-bit register                                        : 14
+ 5-bit register                                        : 1
+ 6-bit register                                        : 1
+ 7-bit register                                        : 7
+ 8-bit register                                        : 7
+# Comparators                                          : 124
+ 10-bit comparator greatequal                          : 20
+ 10-bit comparator less                                : 20
+ 11-bit comparator less                                : 1
+ 32-bit comparator greater                             : 7
+ 32-bit comparator less                                : 7
+ 4-bit comparator greater                              : 42
+ 7-bit comparator greatequal                           : 8
+ 7-bit comparator greater                              : 10
+ 7-bit comparator less                                 : 2
+ 7-bit comparator lessequal                            : 7
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <std_vector4_7> in Unit <park_component> is equivalent to the following 3 FFs/Latches, which will be removed : <std_vector5_5> <std_vector5_6> <std_vector5_7> 
+INFO:Xst:2261 - The FF/Latch <std_vector2_7> in Unit <park_component> is equivalent to the following 2 FFs/Latches, which will be removed : <std_vector3_6> <std_vector3_7> 
+INFO:Xst:2261 - The FF/Latch <std_vector6_7> in Unit <park_component> is equivalent to the following FF/Latch, which will be removed : <std_vector1_7> 
+WARNING:Xst:1710 - FF/Latch <std_vector2_7> (without init value) has a constant value of 0 in block <park_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <std_vector4_7> (without init value) has a constant value of 0 in block <park_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <std_vector6_7> (without init value) has a constant value of 0 in block <park_component>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <bcd2_8> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd2_9> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd2_10> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd2_11> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd4_8> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd4_9> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd4_10> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd4_11> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd6_8> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd6_9> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd6_10> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd6_11> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd1_8> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd1_9> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd1_10> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd1_11> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd3_8> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd3_9> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd3_10> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd3_11> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd5_8> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd5_9> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd5_10> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2677 - Node <bcd5_11> of sequential type is unconnected in block <park_component>.
+WARNING:Xst:2404 -  FFs/Latches <bcd1<11:10>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <bcd3<11:10>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <bcd5<11:10>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <std_vector1<7:7>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <std_vector3<7:6>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <std_vector5<7:5>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <bcd2<11:10>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <bcd4<11:10>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <bcd6<11:10>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <std_vector2<7:7>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <std_vector4<7:7>> (without init value) have a constant value of 0 in block <park>.
+WARNING:Xst:2404 -  FFs/Latches <std_vector6<7:7>> (without init value) have a constant value of 0 in block <park>.
+
+Synthesizing (advanced) Unit <VGA>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_seg_35_mux0001> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_seg_7_mux0001> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <VGA> synthesized (advanced).
+WARNING:Xst:2677 - Node <bcd2_8> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd2_9> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd4_8> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd4_9> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd6_8> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd6_9> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd1_8> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd1_9> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd3_8> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd3_9> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd5_8> of sequential type is unconnected in block <park>.
+WARNING:Xst:2677 - Node <bcd5_9> of sequential type is unconnected in block <park>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 16x1-bit ROM                                          : 2
+ 16x2-bit ROM                                          : 1
+# Adders/Subtractors                                   : 109
+ 1-bit adder                                           : 24
+ 1-bit subtractor                                      : 26
+ 4-bit adder                                           : 42
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+ 7-bit adder                                           : 9
+ 7-bit subtractor                                      : 6
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 19-bit up counter                                     : 1
+# Registers                                            : 339
+ Flip-Flops                                            : 339
+# Comparators                                          : 124
+ 10-bit comparator greatequal                          : 20
+ 10-bit comparator less                                : 20
+ 11-bit comparator less                                : 1
+ 32-bit comparator greater                             : 7
+ 32-bit comparator less                                : 7
+ 4-bit comparator greater                              : 42
+ 7-bit comparator greatequal                           : 8
+ 7-bit comparator greater                              : 10
+ 7-bit comparator less                                 : 2
+ 7-bit comparator lessequal                            : 7
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <bcd3_7> (without init value) has a constant value of 0 in block <park>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bcd5_6> (without init value) has a constant value of 0 in block <park>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <bcd5_7> (without init value) has a constant value of 0 in block <park>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <s_OccupiedSpacesTotal_3> in Unit <park> is equivalent to the following FF/Latch, which will be removed : <std_vector6_3> 
+INFO:Xst:2261 - The FF/Latch <s_FreeCarsFloor1_0> in Unit <park> is equivalent to the following FF/Latch, which will be removed : <std_vector4_0> 
+INFO:Xst:2261 - The FF/Latch <s_FreeSpacesAlgFloor1_2_2> in Unit <park> is equivalent to the following FF/Latch, which will be removed : <s_FreeSpacesAlgFloor1_2_3> 
+INFO:Xst:2261 - The FF/Latch <s_FreeCarsFloor2_2> in Unit <park> is equivalent to the following FF/Latch, which will be removed : <std_vector2_2> 
+INFO:Xst:2261 - The FF/Latch <std_vector5_0> in Unit <park> is equivalent to the following FF/Latch, which will be removed : <bcd4_0> 
+
+Optimizing unit <TOP> ...
+
+Optimizing unit <VGA> ...
+
+Optimizing unit <DISPLAY> ...
+
+Optimizing unit <park> ...
+WARNING:Xst:2677 - Node <park_component/s_gateOpenOutFloor2> of sequential type is unconnected in block <TOP>.
+WARNING:Xst:2677 - Node <park_component/s_gateOpenOutFloor1> of sequential type is unconnected in block <TOP>.
+WARNING:Xst:2677 - Node <park_component/s_gateOpenIn2> of sequential type is unconnected in block <TOP>.
+WARNING:Xst:2677 - Node <park_component/s_gateOpenIn1> of sequential type is unconnected in block <TOP>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TOP, actual ratio is 22.
+
+Final Macro Processing ...
+
+Processing Unit <TOP> :
+	Found 3-bit shift register for signal <park_component/s_OccupiedSpacesAlgTotal_1_0>.
+	Found 3-bit shift register for signal <park_component/bcd3_0>.
+	Found 3-bit shift register for signal <park_component/s_FreeSpacesAlgTotal_1_0>.
+	Found 2-bit shift register for signal <park_component/bcd2_0>.
+	Found 2-bit shift register for signal <park_component/std_vector5_4>.
+	Found 2-bit shift register for signal <park_component/std_vector5_0>.
+	Found 2-bit shift register for signal <park_component/std_vector3_1>.
+Unit <TOP> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 349
+ Flip-Flops                                            : 349
+# Shift Registers                                      : 7
+ 2-bit shift register                                  : 4
+ 3-bit shift register                                  : 3
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : TOP.ngr
+Top Level Output File Name         : TOP
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 39
+
+Cell Usage :
+# BELS                             : 913
+#      GND                         : 1
+#      INV                         : 11
+#      LUT1                        : 36
+#      LUT2                        : 106
+#      LUT2_D                      : 3
+#      LUT2_L                      : 8
+#      LUT3                        : 127
+#      LUT3_D                      : 19
+#      LUT3_L                      : 6
+#      LUT4                        : 376
+#      LUT4_D                      : 57
+#      LUT4_L                      : 26
+#      MUXCY                       : 54
+#      MUXF5                       : 22
+#      VCC                         : 1
+#      XORCY                       : 60
+# FlipFlops/Latches                : 356
+#      FD                          : 21
+#      FD_1                        : 8
+#      FDC                         : 33
+#      FDCE                        : 31
+#      FDE                         : 159
+#      FDE_1                       : 16
+#      FDP                         : 2
+#      FDPE                        : 8
+#      FDR                         : 37
+#      FDRE                        : 21
+#      FDS                         : 20
+# Shift Registers                  : 7
+#      SRL16E                      : 7
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 34
+#      IBUF                        : 9
+#      OBUF                        : 25
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                      424  out of   1920    22%  
+ Number of Slice Flip Flops:            356  out of   3840     9%  
+ Number of 4 input LUTs:                782  out of   3840    20%  
+    Number used as logic:               775
+    Number used as Shift registers:       7
+ Number of IOs:                          39
+ Number of bonded IOBs:                  35  out of    173    20%  
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------+-----------------------------------+-------+
+Clock Signal                                                         | Clock buffer(FF name)             | Load  |
+---------------------------------------------------------------------+-----------------------------------+-------+
+vga_component/mclk1                                                  | BUFG                              | 67    |
+vga_component/vert_inc_flag(vga_component/vert_inc_flag_cmp_eq0000:O)| NONE(*)(vga_component/vert_scan_9)| 10    |
+Clk                                                                  | BUFGP                             | 286   |
+---------------------------------------------------------------------+-----------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+Reset                              | IBUF                   | 74    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 15.095ns (Maximum Frequency: 66.247MHz)
+   Minimum input arrival time before clock: 6.821ns
+   Maximum output required time after clock: 12.334ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'vga_component/mclk1'
+  Clock period: 15.095ns (frequency: 66.247MHz)
+  Total number of paths / destination ports: 5178 / 22
+-------------------------------------------------------------------------
+Delay:               15.095ns (Levels of Logic = 10)
+  Source:            vga_component/horz_scan_9 (FF)
+  Destination:       vga_component/BLU (FF)
+  Source Clock:      vga_component/mclk1 rising
+  Destination Clock: vga_component/mclk1 rising
+
+  Data Path: vga_component/horz_scan_9 to vga_component/BLU
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             18   0.720   1.756  vga_component/horz_scan_9 (vga_component/horz_scan_9)
+     LUT4:I0->O            1   0.551   0.869  vga_component/GRN_and0008120 (vga_component/GRN_and0008120)
+     LUT4:I2->O            7   0.551   1.092  vga_component/GRN_and0008131 (vga_component/N143)
+     LUT4:I3->O            3   0.551   1.246  vga_component/GRN_mux011126 (vga_component/GRN_mux011126)
+     LUT3:I0->O            1   0.551   0.000  vga_component/GRN_mux01111322_SW0_F (N291)
+     MUXF5:I0->O           1   0.360   0.996  vga_component/GRN_mux01111322_SW0 (N91)
+     LUT4:I1->O            1   0.551   0.827  vga_component/GRN_mux01111359_SW0 (N150)
+     LUT4_L:I3->LO         1   0.551   0.126  vga_component/GRN_mux01111478_SW0_SW0 (N267)
+     LUT4:I3->O            2   0.551   1.072  vga_component/GRN_mux01111478_SW0 (N216)
+     LUT4:I1->O            1   0.551   0.869  vga_component/GRN_mux01111281_SW1 (N243)
+     LUT4:I2->O            1   0.551   0.000  vga_component/GRN_mux011115671 (vga_component/GRN_mux01111567)
+     FDS:D                     0.203          vga_component/BLU
+    ----------------------------------------
+    Total                     15.095ns (6.242ns logic, 8.853ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'vga_component/vert_inc_flag'
+  Clock period: 7.778ns (frequency: 128.568MHz)
+  Total number of paths / destination ports: 155 / 20
+-------------------------------------------------------------------------
+Delay:               7.778ns (Levels of Logic = 3)
+  Source:            vga_component/vert_scan_1 (FF)
+  Destination:       vga_component/vert_scan_9 (FF)
+  Source Clock:      vga_component/vert_inc_flag rising
+  Destination Clock: vga_component/vert_inc_flag rising
+
+  Data Path: vga_component/vert_scan_1 to vga_component/vert_scan_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.720   1.473  vga_component/vert_scan_1 (vga_component/vert_scan_1)
+     LUT4:I0->O            1   0.551   0.827  vga_component/vert_scan_cmp_eq00003_SW0 (N29)
+     LUT4:I3->O            2   0.551   0.945  vga_component/vert_scan_cmp_eq00003 (vga_component/N130)
+     LUT4:I2->O           10   0.551   1.134  vga_component/vert_scan_cmp_eq00001 (vga_component/vert_scan_cmp_eq0000)
+     FDR:R                     1.026          vga_component/vert_scan_0
+    ----------------------------------------
+    Total                      7.778ns (3.399ns logic, 4.379ns route)
+                                       (43.7% logic, 56.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 14.502ns (frequency: 68.956MHz)
+  Total number of paths / destination ports: 18349 / 335
+-------------------------------------------------------------------------
+Delay:               7.251ns (Levels of Logic = 9)
+  Source:            park_component/event_rampDOWNSensor2_MINUS (FF)
+  Destination:       park_component/p_167_6 (FF)
+  Source Clock:      Clk falling
+  Destination Clock: Clk rising
+
+  Data Path: park_component/event_rampDOWNSensor2_MINUS to park_component/p_167_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            5   0.720   1.116  park_component/event_rampDOWNSensor2_MINUS (park_component/event_rampDOWNSensor2_MINUS)
+     LUT3_D:I1->O          2   0.551   0.903  park_component/p_167_add_and00001 (park_component/p_167_add_and0000)
+     LUT4:I3->O            1   0.551   0.996  park_component/p_167_add_mux0002<1>1 (park_component/Madd_p_167_add_addsub0002_lut<1>)
+     LUT4:I1->O            1   0.551   0.000  park_component/Madd_p_167_add0000_lut<1> (park_component/Madd_p_167_add0000_lut<1>)
+     MUXCY:S->O            1   0.500   0.000  park_component/Madd_p_167_add0000_cy<1> (park_component/Madd_p_167_add0000_cy<1>)
+     MUXCY:CI->O           1   0.064   0.000  park_component/Madd_p_167_add0000_cy<2> (park_component/Madd_p_167_add0000_cy<2>)
+     MUXCY:CI->O           1   0.064   0.000  park_component/Madd_p_167_add0000_cy<3> (park_component/Madd_p_167_add0000_cy<3>)
+     MUXCY:CI->O           1   0.064   0.000  park_component/Madd_p_167_add0000_cy<4> (park_component/Madd_p_167_add0000_cy<4>)
+     MUXCY:CI->O           0   0.064   0.000  park_component/Madd_p_167_add0000_cy<5> (park_component/Madd_p_167_add0000_cy<5>)
+     XORCY:CI->O           1   0.904   0.000  park_component/Madd_p_167_add0000_xor<6> (park_component/p_167_add0000<6>)
+     FDCE:D                    0.203          park_component/p_167_6
+    ----------------------------------------
+    Total                      7.251ns (4.236ns logic, 3.015ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 449 / 275
+-------------------------------------------------------------------------
+Offset:              6.821ns (Levels of Logic = 2)
+  Source:            Reset (PAD)
+  Destination:       park_component/s_OccupiedSpacesAlgTotal_1_3 (FF)
+  Destination Clock: Clk rising
+
+  Data Path: Reset to park_component/s_OccupiedSpacesAlgTotal_1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            99   0.821   2.576  Reset_IBUF (Reset_IBUF)
+     LUT2:I0->O          105   0.551   2.271  park_component/s_FreeCarsFloor1_not000211 (park_component/LEDS_not0001)
+     FDE:CE                    0.602          park_component/LEDS_0
+    ----------------------------------------
+    Total                      6.821ns (1.974ns logic, 4.847ns route)
+                                       (28.9% logic, 71.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'vga_component/mclk1'
+  Total number of paths / destination ports: 8 / 4
+-------------------------------------------------------------------------
+Offset:              11.375ns (Levels of Logic = 3)
+  Source:            vga_component/horz_scan_5 (FF)
+  Destination:       HS (PAD)
+  Source Clock:      vga_component/mclk1 rising
+
+  Data Path: vga_component/horz_scan_5 to HS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             24   0.720   1.992  vga_component/horz_scan_5 (vga_component/horz_scan_5)
+     LUT2_D:I1->O          5   0.551   1.116  vga_component/GRN_cmp_ge0001111 (vga_component/N20)
+     LUT4:I1->O            1   0.551   0.801  vga_component/HS11 (HS_OBUF)
+     OBUF:I->O                 5.644          HS_OBUF (HS)
+    ----------------------------------------
+    Total                     11.375ns (7.466ns logic, 3.909ns route)
+                                       (65.6% logic, 34.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'vga_component/vert_inc_flag'
+  Total number of paths / destination ports: 9 / 1
+-------------------------------------------------------------------------
+Offset:              12.334ns (Levels of Logic = 4)
+  Source:            vga_component/vert_scan_1 (FF)
+  Destination:       VS (PAD)
+  Source Clock:      vga_component/vert_inc_flag rising
+
+  Data Path: vga_component/vert_scan_1 to VS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.720   1.473  vga_component/vert_scan_1 (vga_component/vert_scan_1)
+     LUT4:I0->O            1   0.551   0.827  vga_component/vert_scan_cmp_eq00003_SW0 (N29)
+     LUT4:I3->O            2   0.551   1.216  vga_component/vert_scan_cmp_eq00003 (vga_component/N130)
+     LUT3:I0->O            1   0.551   0.801  vga_component/VS_cmp_eq00001 (VS_OBUF)
+     OBUF:I->O                 5.644          VS_OBUF (VS)
+    ----------------------------------------
+    Total                     12.334ns (8.017ns logic, 4.317ns route)
+                                       (65.0% logic, 35.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 20 / 20
+-------------------------------------------------------------------------
+Offset:              7.165ns (Levels of Logic = 1)
+  Source:            display_component/an0 (FF)
+  Destination:       an0 (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: display_component/an0 to an0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.720   0.801  display_component/an0 (display_component/an0)
+     OBUF:I->O                 5.644          an0_OBUF (an0)
+    ----------------------------------------
+    Total                      7.165ns (6.364ns logic, 0.801ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 20.99 secs
+ 
+--> 
+
+
+Total memory usage is 555160 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   76 (   0 filtered)
+Number of infos    :   22 (   0 filtered)
+

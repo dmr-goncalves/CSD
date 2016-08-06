@@ -1,0 +1,5 @@
+set -tmpdir "/home/user/CSD/parking/xst/projnav.tmp"
+set -xsthdpdir "/home/user/CSD/parking/xst"
+elaborate
+-ifn park.prj
+-ifmt mixed
